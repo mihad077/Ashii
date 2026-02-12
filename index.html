@@ -8,19 +8,22 @@
   <style>
     body {
       margin: 0;
+      padding: 0;
       height: 100vh;
+      width: 100vw;
       display: flex;
       justify-content: center;
       align-items: center;
       font-family: Arial, sans-serif;
       text-align: center;
       overflow: hidden;
+      background: black;
     }
 
     /* Background GIF */
     body::before {
       content: "";
-      position: absolute;
+      position: fixed;
       inset: 0;
       background: url("main.gif.GIF") center/cover no-repeat;
       z-index: -2;
@@ -29,7 +32,7 @@
     /* Dark overlay */
     body::after {
       content: "";
-      position: absolute;
+      position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.35);
       z-index: -1;
@@ -72,29 +75,29 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      width: 100%;
+      width: 100vw;
       position: relative;
+      overflow: hidden;
     }
 
-    /* Fullscreen Photo */
+    /* ✅ Fullscreen Photo Fixed */
     #resultBox img.photo {
-      width: 100%;
+      width: 100vw;
       height: 100vh;
       object-fit: cover;
-      position: absolute;
-      inset: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
       z-index: -1;
     }
 
     /* ✅ Hug GIF moved UP */
     #hugGif {
       width: 190px;
-
       position: absolute;
-      top: 6%;          /* 🔥 Move up/down here */
+      top: 6%;  /* 🔥 Move up/down here */
       left: 50%;
       transform: translateX(-50%);
-
       background: transparent !important;
       mix-blend-mode: multiply;
     }
@@ -154,7 +157,7 @@
     <h2>
       Ashii 🤍 you are my sweetest blessing 😽💖 <br>
       You make my world brighter every day ✨💘
-      </h2>
+    </h2>
   </div>
 
   <!-- NO Result -->

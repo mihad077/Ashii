@@ -1,1 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashii 🤍 Valentine</title>
 
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Background GIF */
+    body::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("main.gif.GIF") center/cover no-repeat;
+      z-index: -2;
+    }
+
+    /* Dark overlay */
+    body::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: -1;
+    }
+
+    h1 {
+      color: hotpink;
+      font-size: 2.3rem;
+      text-shadow: 2px 2px 12px black;
+    }
+
+    button {
+      padding: 14px 30px;
+      margin: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    #yesBtn {
+      background: hotpink;
+      color: white;
+    }
+
+    #yesBtn:hover {
+      transform: scale(1.1);
+    }
+
+    #noBtn {
+      background: white;
+      color: black;
+    }
+
+    /* Screens */
+    #resultBox, #noBox {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Fullscreen Photo */
+    #resultBox img.photo {
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    /* Hug GIF center */
+    #hugGif {
+      width: 190px;
+      margin-top: 30px;
+      background: transparent !important;
+      mix-blend-mode: multiply;
+    }
+
+    /* Bottom Text */
+    #resultBox h2 {
+      position: absolute;
+      bottom: 25px;
+      color: white;
+      font-size: 1.15rem;
+      text-shadow: 2px 2px 12px black;
+      padding: 0 15px;
+      max-width: 90%;
+      line-height: 1.5;
+    }
+
+    /* NO Screen */
+    #noBox {
+      background: black;
+    }
+
+    #noBox h2 {
+      color: white;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 12px red;
+    }
+
+    #noBox img {
+      width: 260px;
+      border-radius: 20px;
+      box-shadow: 0px 0px 25px red;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main Question -->
+  <div id="mainBox">
+    <h1>Ashii, will you be my Valentine? 🤍😽💖</h1>
+
+    <button id="yesBtn">Yes 🥰</button>
+    <button id="noBtn">No 😭</button>
+  </div>
+
+  <!-- YES Result -->
+  <div id="resultBox">
+
+    <!-- Fullscreen Photo -->
+    <img src="photo.jpg.jpg" class="photo" alt="Ashii Photo">
+
+    <!-- Hug GIF -->
+    <img id="hugGif" src="love.gif.GIF" alt="Hug Gif">
+
+    <!-- Bottom Message -->
+    <h2>
+      Ashii 🤍 you are my sweetest blessing 😽💖 <br>
+      May Allah always keep you smiling, safe and happy 🤲✨ <br>
+      Happy Valentine’s Day 💘
+    </h2>
+  </div>
+
+  <!-- NO Result -->
+  <div id="noBox">
+    <h2>Ashii pleaseee 😭💔</h2>
+    <img src="cry.gif.GIF" alt="Crying Gif">
+  </div>
+
+  <script>
+    const yesBtn = document.getElementById("yesBtn");
+    const noBtn = document.getElementById("noBtn");
+
+    const mainBox = document.getElementById("mainBox");
+    const resultBox = document.getElementById("resultBox");
+    const noBox = document.getElementById("noBox");
+
+    // YES Click
+    yesBtn.onclick = () => {
+      mainBox.style.display = "none";
+      resultBox.style.display = "flex";
+    };
+
+    // NO Click
+    noBtn.onclick = () => {
+      mainBox.style.display = "none";
+      noBox.style.display = "flex";
+    };
+  </script>
+
+</body>
+</html>
